@@ -264,7 +264,7 @@ The knives realign to maintain equal protrusion of the core. The knives find the
                     src="https://www.youtube.com/embed/kqv2QqCMrWg" 
                     title="YouTube video player" 
                     frameBorder="0" 
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  
                     allowFullScreen>
                     
                   </iframe>
@@ -328,7 +328,7 @@ The knives realign to maintain equal protrusion of the core. The knives find the
                     src="https://www.youtube.com/embed/kqv2QqCMrWg" 
                     title="YouTube video player" 
                     frameBorder="0" 
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                   
                     allowFullScreen>
                     
                   </iframe>
