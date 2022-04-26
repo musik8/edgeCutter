@@ -3,11 +3,11 @@ import Image from 'next/image'
 
 
 
-export default function Content({ children, classes }) {
+export default function Content({ children, classes, refs }) {
   
 
   return (
-  <div className={`view-container ${classes}`}> 
+  <div ref={refs} className={`view-container ${classes}`}> 
    {children} 
   </div>
   

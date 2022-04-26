@@ -12,13 +12,19 @@ import TextContent from '../components/TextContent.js'
 
 import tempPic from '../public/images/edgeCutter.jpg'
 import tempGif from '../public/images/giftest.gif'
+import { useEffect } from 'react/cjs/react.production.min';
+
+import ec1000Gif1 from '../public/ec-200-1100/gif1.gif'
+import ec1000Gif2 from '../public/ec-200-1100/gif2.gif'
+import ec1000Gif3 from '../public/ec-200-1100/gif3.gif'
+
+
+import useIntersection from '../components/hooks/useIntersection.js'
 
 export default function Home() {
   //Setup meta tags
 
-
-
-
+ 
   //menu items
 
   const model_0 = {
@@ -55,23 +61,22 @@ export default function Home() {
   }
   const model_1 = {
     id: 1,
-    name: "EC-400",
+    name: "EC-200-1100",
     options: [
-      "Automatic Roll OD Detection",
-      "Core Cutting"
+      "Trim take-away conveyor",
     ],
     param: [
       {
         item: "Roll Width",
-        value: "250 - 500mm"
+        value: "280 - 1100mm"
       },
       {
         item: "Core Diameter",
-        value: "76mm, 110mm, 152mm"
+        value: "110mm, 152mm"
       },
       {
         item: "Roll Outer Diameter",
-        value: "300mm"
+        value: "Max 254mm"
       },
       {
         item: "Loading",
@@ -87,7 +92,8 @@ export default function Home() {
   }
  
   
- 
+  
+
 
   let menuArray = [model_0,model_1]
 
@@ -97,8 +103,17 @@ export default function Home() {
 
 
 
+  const standardModel = useRef();
+  const inViewport = useIntersection(standardModel, '-200px');
+  //const standVisible = useOnScreen(standardModel)
+ 
+  console.log(inViewport)
+  // useEffect(() => {
+  //   console.log("Is visible? ", inViewport)
+  // }, [inViewport])
 
 
+  
 
   return (
     <div className="container">
@@ -121,10 +136,20 @@ export default function Home() {
       <Content>
         
         <Left>
+        <div className="text-box no-space">
         <h2>AGM <br/> Automation <br/> <span className="subtext">Presents</span></h2>
     
-    <h1>Industrial Roll <br/> Edge Cutters</h1>
-
+          <h1>Industrial Roll <br/> Edge Cutters</h1>
+        </div>
+        <div className="text-box">
+          <ul>
+            <li onClick={()=> standardModel.current.scrollIntoView({ behavior: 'smooth' })} >Standard Models</li>
+            <li onClick={()=> standardModel.current.scrollIntoView({ behavior: 'smooth' })} >Customize</li>
+            <li onClick={()=> standardModel.current.scrollIntoView({ behavior: 'smooth' })} >Industries</li>
+            <li onClick={()=> standardModel.current.scrollIntoView({ behavior: 'smooth' })} >Support</li>
+            <li onClick={()=> standardModel.current.scrollIntoView({ behavior: 'smooth' })} >About Us & Contact</li>
+          </ul>
+        </div>
         </Left>
         <Right>
 
@@ -158,7 +183,7 @@ The knives realign to maintain equal protrusion of the core. The knives find the
           <div className="row">
             <Image 
               className="col-image"
-              src={tempPic}
+              src={ec1000Gif2}
               width={1280}
               height={720}
               alt="add meta information for pictures"
@@ -183,17 +208,19 @@ The knives realign to maintain equal protrusion of the core. The knives find the
 
 
       {/* STANDARD MODELS AREA */}
-      <Content>
+      <Content refs={standardModel} >
         <Left>
-            <div className="text-box">
-              <h2>Standard Models</h2>
+            <div  className="text-box">
+              <h2>Standard Models </h2>
               <p>
+                <p>[Basic summary of the standard models]</p>
               We are pleased to present our line of EC-series automatic Edge Cutters. Designed and built in Canada, the Edge Cutters assure uninterrupted use in your facility. They trim automatically the sides of cling film rolls wound on paper cores, producing uniform, finished rolls with clean, burr-free, straight edges; centered on their cores, easy to unwind. 
               </p>
             </div>
 
             <div className="text-box">
               <h2>Customize Industrial <br/> Roll Edge Cutters </h2>
+              <p>[In what ways can the edge cutter be customized?]</p>
               <p>
               We are pleased to present our line of EC-series automatic Edge Cutters. Designed and built in Canada, the Edge Cutters assure uninterrupted use in your facility. They trim automatically the sides of cling film rolls wound on paper cores, producing uniform, finished rolls with clean, burr-free, straight edges; centered on their cores, easy to unwind. 
               </p>
@@ -211,7 +238,7 @@ The knives realign to maintain equal protrusion of the core. The knives find the
 
       <Popup activeModel={activeModel} setModel={setModel}>
   
-
+      {/* EC-300 */}
         <Content classes="model-0 popup-item">
             <Left>
             <h2>{model_0.name}</h2>
@@ -276,6 +303,7 @@ The knives realign to maintain equal protrusion of the core. The knives find the
             </Right>
         </Content>
 
+        {/* EC-200-1100 */}
         <Content classes="model-1 popup-item">
             <Left>
             <h2>{model_1.name}</h2>
@@ -299,7 +327,7 @@ The knives realign to maintain equal protrusion of the core. The knives find the
              
                   <Image 
                     className="col-image"
-                    src={tempPic}
+                    src={ec1000Gif1}
                     width={1280}
                     height={720}
                     alt="add meta information for pictures"
@@ -311,7 +339,7 @@ The knives realign to maintain equal protrusion of the core. The knives find the
                
                 <Image 
                     className="col-image"
-                    src={tempPic}
+                    src={ec1000Gif3}
                     width={1280}
                     height={720}
                     alt="add meta information for pictures"
@@ -347,7 +375,11 @@ The knives realign to maintain equal protrusion of the core. The knives find the
         <Left>
           <div className="text-box">
             <h2>Industries</h2>
+            <p>[What industries are the edge cutters used for?]</p>
+            <p>[What kind of end products are there?]</p>
+            <p>[What materials do the edge cutters process?]</p>
             <p>
+
             The edge cutter machines are used in many industries...
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec ultricies dui, sed vehicula libero. Nunc ut sem ut est fringilla consectetur vel in purus. Vivamus eleifend risus eu egestas laoreet. Sed vitae lectus eget lectus egestas gravida ac vitae enim. Etiam tincidunt auctor justo ac faucibus. Praesent at tempor arcu. Proin quis elementum est. Vestibulum laoreet suscipit rutrum. Aenean a mauris quis libero convallis euismod. Aliquam eu sapien vitae purus malesuada sodales. Ut ut ex risus. Maecenas in lorem et arcu egestas ullamcorper. Nulla fermentum at ante at commodo. Morbi condimentum neque turpis, a lobortis nibh pharetra quis. Sed sed consequat lacus.
             </p>
@@ -364,8 +396,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec ultricies d
           <div className="text-box">
             <h2>Edge Cutter Support</h2>
             <p>
-            The edge cutter machines are used in many industries...
+            [How will agm support the client??, besides selling the edge cutter blade]
+            
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec ultricies dui, sed vehicula libero. Nunc ut sem ut est fringilla consectetur vel in purus. Vivamus eleifend risus eu egestas laoreet. Sed vitae lectus eget lectus egestas gravida ac vitae enim. Etiam tincidunt auctor justo ac faucibus. Praesent at tempor arcu. Proin quis elementum est. Vestibulum laoreet suscipit rutrum. Aenean a mauris quis libero convallis euismod. Aliquam eu sapien vitae purus malesuada sodales. Ut ut ex risus. Maecenas in lorem et arcu egestas ullamcorper. Nulla fermentum at ante at commodo. Morbi condimentum neque turpis, a lobortis nibh pharetra quis. Sed sed consequat lacus.
+           
             </p>
           </div>
         </Left>
