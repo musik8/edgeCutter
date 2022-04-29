@@ -53,7 +53,7 @@ export default function Home() {
 
   const model_0 = {
     id: 0,
-    name: "EC-400 & EC-400W",
+    name: "EC-400 & EC-400W #1",
     picture: ec400,
     src: "https://www.youtube.com/embed/Bemm_F5OinA" ,
     options: [
@@ -87,7 +87,7 @@ export default function Home() {
   }
   const model_1 = {
     id: 1,
-    name: "EC-200-1100",
+    name: "EC-200-1100 #2",
     picture: ec1100main,
     src: "https://www.youtube.com/embed/OJzS40vWNsc" ,
     options: [
@@ -121,7 +121,7 @@ export default function Home() {
 
   const model_2 = {
     id: 2,
-    name: "EC-300AL",
+    name: "EC-300AL #3",
     src: "https://www.youtube.com/embed/kqv2QqCMrWg" ,
     picture: ec300,
     options: [
@@ -163,7 +163,7 @@ export default function Home() {
   
 
 
-  let menuArray = [model_1, model_2,model_0]
+  let menuArray = [model_0, model_1 , model_2]
 
 
   const [activeModel, setModel] = useState(null)
@@ -253,7 +253,7 @@ export default function Home() {
 
             </p>
             <p>
-The knives realign to maintain equal protrusion of the core. The knives find their position automatically. All six axes' movements are controlled by PLC. All operation parameters are set on the touch screen monitor including final film width, core outer diameter, and roll's outer diameter.
+The knives realign to maintain equal protrusion of the core. The knives find their position automatically. All six axes' movements are controlled by PLC. The operation parameters are set on the touch screen monitor.
             </p>
             </div>
           </div>
@@ -293,11 +293,10 @@ The knives realign to maintain equal protrusion of the core. The knives find the
         <Left>
             <div  className="text-box">
               <h2>Standard Models </h2>
-              <p>AGM currently manufactures several edge cutters that vary in features to fit your PVC or polyethylene edge trimming requirements.
-</p>
+              <p>AGM manufactures several edge cutters that vary in features to fit your PVC or polyethylene edge trimming requirements.</p>
 
               <p>
-All the models are featured with 6 servo axes, fully digital settings, carbide knives, and more. Roll spinning, cutting speed, cutting trajectory (straight, spreading) and a multicut mode may be adjusted to get the best cut of the PVC roll. Film properties and rolls winding hardness may require different cutting parameters.  
+All the models are featured with 6 servo axes, fully digital settings, carbide knives, and more. Roll spinning, cutting speed, cutting trajectory (straight, spreading) and a multicut mode may be adjusted to get the best cut of the PVC roll because the different film properties and roll's hardness may require suitable cutting parameters.  
 These edge cutters are also suitable for side trimming of PVC shrink film and PE stretch film rolls.
 
               </p>
@@ -326,7 +325,9 @@ These edge cutters are also suitable for side trimming of PVC shrink film and PE
                 options={model_0.options}
               />
             </div>
-
+            <p>
+              AUTOMATIC EDGE CUTTER FOR REGULAR AND EXTRA BIG ROLLS
+            </p>
             <p>
             This machine can handle rolls of 280-550 mm wide and 120 mm to 400 mm outer diameter (OD) [up to 610 mm OD for EC-400W]. This machine can trim any problematic rolls with telescoping edges and core uneven protrusion. It can make multiple cuts until the roll edge gets perfect. The cycle time varies significantly depending on the roll OD and roll quality. Minimum cycle time is 30-35 sec. The model EC-400 has also the core cutting option as a part of the trimming cycle.
 
@@ -418,6 +419,7 @@ These edge cutters are also suitable for side trimming of PVC shrink film and PE
                 options={model_1.options}
               />
             </div>
+            <p>AUTOMATIC EDGE CUTTER FOR REGULAR AND EXTRA WIDE ROLLS</p>
 
             <p>
             This machine is designed for trimming extra-wide rolls from 280 mm to 1030 mm and 120 – 200 mm OD. 
@@ -506,7 +508,7 @@ These edge cutters are also suitable for side trimming of PVC shrink film and PE
                 options={model_2.options}
               />
             </div>
-
+            <p>AUTOMATIC ROLL LOADING EDGE CUTTER</p>
             <p>
             This machine has loading and unloading conveyors with up to 10 roll capacity. 
 
@@ -625,9 +627,10 @@ These edge cutters are also suitable for side trimming of PVC shrink film and PE
           <div className="text-box">
             <h2>Stretch Film Roll Edge Cutter Support</h2>
             <p>
-            Previously manufactured under Tronoplast brand, the edge cutter technology was transferred to AGM Automation.
-The Tronoplast's machines were significantly improved under the new brand. AGM's machines have been sold to many locations since Tronoplast closed its doors.
-We also upgrade and solve all issues with Tronoplast products including programming and spare parts supply. We repair, upgrade, and deliver spare parts for both Tronoplast and AGM machines currently in service.  
+            Previously manufactured under Tronoplast brand, the edge cutter technology was transferred to AGM Automation. 
+          
+The machines were significantly improved under the new brand. 
+ We repair, upgrade, and deliver spare parts for both Tronoplast and AGM machines currently in service.  
  Please be assured of our permanent support for your current and future needs. 
 
            
@@ -642,9 +645,8 @@ We also upgrade and solve all issues with Tronoplast products including programm
               <ul className="reg">
                 <li>Online troubleshooting</li>
                 <li>Service visits</li>
-                <li>Consumable Parts</li>
-                <li>Process advice</li>
-                <li>Emergency Contact</li>
+                <li>Consumable parts supply</li>
+                <li>Process advice (online/phone)</li>
               </ul>
             </div>
             <div className="col">
