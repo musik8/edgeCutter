@@ -2,7 +2,7 @@ import {Component, useEffect, useRef, useState} from 'react';
 import Image from 'next/image'
 import TextContent from './TextContent';
 
-import tempPic from '../public/images/edgeCutter.jpg'
+
 
 
 export default function ModelMenu({ children, data, setModel }) {
@@ -17,15 +17,13 @@ export default function ModelMenu({ children, data, setModel }) {
        <div className="image-content">
           <div className="still-image">
             <Image 
-                src={tempPic}
+                src={item.picture}
                 layout="fill"
                 alt="add meta information for pictures"
                 objectFit='cover'
               />
           </div>
-          <div className="gif-image">
-
-          </div>
+          
        </div>
       <TextContent
         param={item.param}

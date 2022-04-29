@@ -1,5 +1,5 @@
 import {gsap} from 'gsap'
-import {useRef, useState,useEffect, useLayoutEffect} from 'react';
+import {useRef, useEffect } from 'react';
 export default function Popup({ children, classes, activeModel, setModel }) {
   
   const openAnimation = useRef();
@@ -12,13 +12,9 @@ export default function Popup({ children, classes, activeModel, setModel }) {
     if(activeModel !== null) {
      // openAnimation.current.resume();
     
-      
-      
-      
+
        openItem();
       console.log("ActiveModel: ",activeModel)
-
-
 
     }
     
@@ -38,7 +34,10 @@ export default function Popup({ children, classes, activeModel, setModel }) {
     gsap.to(popup.current, {
       alpha: 1,
       pointerEvents: "auto" ,
-      duration: 1} )
+      duration: 1,
+      y: "0%",
+      delay: 0.5
+    } )
 
   
  
@@ -54,6 +53,7 @@ export default function Popup({ children, classes, activeModel, setModel }) {
     gsap.to(popup.current, {
       alpha: 0,
       pointerEvents: "none" ,
+      y: "100%",
       duration: 1} )
 
     gsap.to(subObj(targetClass), {

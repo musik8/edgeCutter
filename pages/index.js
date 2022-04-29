@@ -10,13 +10,30 @@ import Right from '../components/layout/Right.js'
 import ModelMenu from '../components/ModelMenu.js'
 import TextContent from '../components/TextContent.js'
 
-import tempPic from '../public/images/edgeCutter.jpg'
+import tempPic from '../public/ec-200-1100/gif1.gif'
 import tempGif from '../public/images/giftest.gif'
 import { useEffect } from 'react/cjs/react.production.min';
 
+//EC-1100
+import ec1100main from '../public/ec-200-1100/ec-1100-200.jpg'
 import ec1000Gif1 from '../public/ec-200-1100/gif1.gif'
 import ec1000Gif2 from '../public/ec-200-1100/gif2.gif'
 import ec1000Gif3 from '../public/ec-200-1100/gif3.gif'
+
+
+//EC400
+import ec400Gif1 from '../public/ec400/gif1.gif'
+import ec400Gif2 from '../public/ec400/gif2.gif'
+import ec400 from  '../public/ec400/ec.jpg'
+import ec400Settings from  '../public/ec400/ec400-settings-color.png'
+
+
+//EC300
+import ec300Gif1 from '../public/ec300/gif1.gif'
+import ec300Gif2 from '../public/ec300/gif2.gif'
+import ec300Gif3 from '../public/ec300/gif3.gif'
+import ec300 from  '../public/ec300/ec.jpg'
+
 
 
 import useIntersection from '../components/hooks/useIntersection.js'
@@ -29,7 +46,9 @@ export default function Home() {
 
   const model_0 = {
     id: 0,
-    name: "EC-300",
+    name: "EC-400 & EC-400W",
+    picture: ec400,
+    src: "https://www.youtube.com/embed/Bemm_F5OinA" ,
     options: [
       "Automatic Roll OD Detection",
       "Core Cutting"
@@ -37,7 +56,7 @@ export default function Home() {
     param: [
       {
         item: "Roll Width",
-        value: "250 - 500mm"
+        value: "250 - 600mm"
       },
       {
         item: "Core Diameter",
@@ -45,7 +64,7 @@ export default function Home() {
       },
       {
         item: "Roll Outer Diameter",
-        value: "300mm"
+        value: "max 400mm"
       },
       {
         item: "Loading",
@@ -62,6 +81,8 @@ export default function Home() {
   const model_1 = {
     id: 1,
     name: "EC-200-1100",
+    picture: ec1100main,
+    src: "https://www.youtube.com/embed/OJzS40vWNsc" ,
     options: [
       "Trim take-away conveyor",
     ],
@@ -72,7 +93,7 @@ export default function Home() {
       },
       {
         item: "Core Diameter",
-        value: "110mm, 152mm"
+        value: "76mm, 110mm, 152mm"
       },
       {
         item: "Roll Outer Diameter",
@@ -90,12 +111,52 @@ export default function Home() {
       
     ]
   }
+
+  const model_2 = {
+    id: 2,
+    name: "EC-300AL",
+    src: "https://www.youtube.com/embed/kqv2QqCMrWg" ,
+    picture: ec300,
+    options: [
+      "Trim take-away conveyor",
+    ],
+    param: [
+      {
+        item: "Roll Width",
+        value: "280 - 550mm"
+      },
+      {
+        item: "Core Diameter",
+        value: "76mm, 110mm, 152mm"
+      },
+      {
+        item: "Roll Outer Diameter",
+        value: "Max 300mm"
+      },
+      {
+        item: "Loading",
+        value: "Front"
+      },
+      {
+        item: "Unloading",
+        value: "Back"
+      },
+      {
+        item: "Conveyor Capacity ",
+        value: "10"
+      },
+      
+      
+      
+    ]
+  }
+ 
  
   
   
 
 
-  let menuArray = [model_0,model_1]
+  let menuArray = [model_1, model_2,model_0]
 
 
   const [activeModel, setModel] = useState(null)
@@ -119,13 +180,13 @@ export default function Home() {
     <div className="container">
       
       <Head>
-        <title>AGM Industrial Edge Cutter</title>
+        <title>AGM Stretch Film Roll Edge Cutters</title>
         <link rel="icon" href="/favicon.ico" />
         <meta charSet="UTF-8"/>
         
-        <meta name="description" content="Free Web tutorials"/>
-        <meta name="keywords" content="HTML, CSS, JavaScript"/>
-        <meta name="author" content="John Doe"/>
+        <meta name="description" content="AGM manufactures PVC, PE stretch film roll edge cutters"/>
+        <meta name="keywords" content="PVC, PE, Edge, Cutter, Stretch Film"/>
+        <meta name="author" content="AGM automation"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       </Head>
 
@@ -139,7 +200,7 @@ export default function Home() {
         <div className="text-box no-space">
         <h2>AGM <br/> Automation <br/> <span className="subtext">Presents</span></h2>
     
-          <h1>Industrial Roll <br/> Edge Cutters</h1>
+          <h1>PVC & PE Stretch Film Roll Edge Cutters</h1>
         </div>
         <div className="text-box">
           <ul>
@@ -158,7 +219,7 @@ export default function Home() {
             
             <Image 
               className="col-image"
-              src={tempGif}
+              src={ec1100main}
               width={1280}
               height={720}
               alt="add meta information for pictures"
@@ -169,7 +230,8 @@ export default function Home() {
           <div className="row">
               <div className="col">
             <p>
-            We are pleased to present our line of EC-series automatic Edge Cutters. Designed and built in Canada, the Edge Cutters assure uninterrupted use in your facility. They trim automatically the sides of cling film rolls wound on paper cores, producing uniform, finished rolls with clean, burr-free, straight edges; centered on their cores, easy to unwind. 
+            We are pleased to present our line of EC-series automatic stretch film Edge Cutters. Designed and built in Canada, the Edge Cutters assure uninterrupted use in your facility. They trim automatically the sides of cling film rolls wound on paper cores, producing uniform, finished rolls with clean, burr-free, straight edges; centered on their cores, easy to unwind.
+
             </p>
             <p>
 The knives realign to maintain equal protrusion of the core. The knives find their position automatically. All six axes' movements are controlled by PLC. All operation parameters are set on the touch screen monitor including final film width, core outer diameter, and roll's outer diameter.
@@ -183,7 +245,7 @@ The knives realign to maintain equal protrusion of the core. The knives find the
           <div className="row">
             <Image 
               className="col-image"
-              src={ec1000Gif2}
+              src={ec300Gif2}
               width={1280}
               height={720}
               alt="add meta information for pictures"
@@ -192,7 +254,7 @@ The knives realign to maintain equal protrusion of the core. The knives find the
           <div className="row">
             <Image 
               className="col-image"
-              src={tempPic}
+              src={ec1000Gif3}
               width={1280}
               height={720}
               alt="add meta information for pictures"
@@ -212,20 +274,16 @@ The knives realign to maintain equal protrusion of the core. The knives find the
         <Left>
             <div  className="text-box">
               <h2>Standard Models </h2>
+              <p>AGM currently manufactures several edge cutters that vary in features to fit your PVC or polyethylene edge trimming requirements.
+</p>
+
               <p>
-                <p>[Basic summary of the standard models]</p>
-              We are pleased to present our line of EC-series automatic Edge Cutters. Designed and built in Canada, the Edge Cutters assure uninterrupted use in your facility. They trim automatically the sides of cling film rolls wound on paper cores, producing uniform, finished rolls with clean, burr-free, straight edges; centered on their cores, easy to unwind. 
+All the models are featured with 6 servo axes, fully digital settings, carbide knives, and more. Roll spinning, cutting speed, cutting trajectory (straight, spreading) and a multicut mode may be adjusted to get the best cut of the PVC roll. Film properties and rolls winding hardness may require different cutting parameters.  
+These edge cutters are also suitable for side trimming of PVC shrink film and PE stretch film rolls.
+
               </p>
             </div>
 
-            <div className="text-box">
-              <h2>Customize Industrial <br/> Roll Edge Cutters </h2>
-              <p>[In what ways can the edge cutter be customized?]</p>
-              <p>
-              We are pleased to present our line of EC-series automatic Edge Cutters. Designed and built in Canada, the Edge Cutters assure uninterrupted use in your facility. They trim automatically the sides of cling film rolls wound on paper cores, producing uniform, finished rolls with clean, burr-free, straight edges; centered on their cores, easy to unwind. 
-              </p>
-            </div>
-       
         </Left>
 
         <Right classes="menuScreen">
@@ -238,7 +296,7 @@ The knives realign to maintain equal protrusion of the core. The knives find the
 
       <Popup activeModel={activeModel} setModel={setModel}>
   
-      {/* EC-300 */}
+      {/* EC-400 */}
         <Content classes="model-0 popup-item">
             <Left>
             <h2>{model_0.name}</h2>
@@ -251,36 +309,63 @@ The knives realign to maintain equal protrusion of the core. The knives find the
             </div>
 
             <p>
-            This machine has loading and unloading conveyors with up to 6 roll capacity. This machine can trim rolls from 120 mm to 280 mm OD and 280-550 mm wide. The cycle time is about 15-25 sec.
+            This machine can handle rolls of 280-550 mm wide and 120 mm to 400 mm outer diameter (OD) [up to 610 mm OD for EC-400W]. This machine can trim any problematic rolls with telescoping edges and core uneven protrusion. It can make multiple cuts until the roll edge gets perfect. The cycle time varies significantly depending on the roll OD and roll quality. Minimum cycle time is 30-35 sec. The model EC-400 has also the core cutting option as a part of the trimming cycle.
+
             </p>
             
+         
             </Left>
             <Right>
             <div className="col full">
             <div className="row">
               <div className="col">
-             
                   <Image 
                     className="col-image"
-                    src={tempPic}
+                    src={ec400}
                     width={1280}
                     height={720}
-                    alt="add meta information for pictures"
+                    objectFit='cover'
+                    alt="Edge Trimmer ec400"
                   />
-               
               </div>
-
               <div className="col">
-               
                 <Image 
                     className="col-image"
-                    src={tempPic}
+                    src={ec400Gif1}
                     width={1280}
                     height={720}
-                    alt="add meta information for pictures"
+                    objectFit='cover'
+                    alt="ec400 roll edge trimmer in action"
                   />
-                
               </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                  <Image 
+                    className="col-image"
+                    src={ec400Gif2}
+                    width={1280}
+                    height={720}
+                    objectFit='cover'
+                    alt="Edge Trimmer ec400"
+                  />
+              </div>
+             
+            </div>
+            <div className="row">
+              <div className="col">
+                
+                <Image 
+                    className="col-image"
+                    src={ec400Settings}
+                    width={1280}
+                    height={720}
+                    objectFit='cover'
+                    alt="EC400 settings"
+                  />
+               
+              </div>
+              
             </div>
             <div className="row">
               <div className="col full">
@@ -288,14 +373,13 @@ The knives realign to maintain equal protrusion of the core. The knives find the
                   <iframe 
                     width="100%" 
                     height="100%" 
-                    src="https://www.youtube.com/embed/kqv2QqCMrWg" 
+                    src={activeModel === model_0.id ? model_0.src: ""} 
                     title="YouTube video player" 
                     frameBorder="0" 
   
                     allowFullScreen>
                     
                   </iframe>
-
                 </div>
               </div>
             </div>
@@ -304,6 +388,7 @@ The knives realign to maintain equal protrusion of the core. The knives find the
         </Content>
 
         {/* EC-200-1100 */}
+
         <Content classes="model-1 popup-item">
             <Left>
             <h2>{model_1.name}</h2>
@@ -316,7 +401,8 @@ The knives realign to maintain equal protrusion of the core. The knives find the
             </div>
 
             <p>
-            This machine has loading and unloading conveyors with up to 6 roll capacity. This machine can trim rolls from 120 mm to 280 mm OD and 280-550 mm wide. The cycle time is about 15-25 sec.
+            This machine is designed for trimming extra-wide rolls from 280 mm to 1030 mm and 120 – 200 mm OD. 
+
             </p>
             
             </Left>
@@ -324,27 +410,46 @@ The knives realign to maintain equal protrusion of the core. The knives find the
             <div className="col full">
             <div className="row">
               <div className="col">
-             
                   <Image 
+                    className="col-image"
+                    src={ec1100main}
+                    width={1280}
+                    height={720}
+                    objectFit='cover'
+                    alt="add meta information for pictures"
+                  />
+              </div>
+              <div className="col">
+                <Image 
                     className="col-image"
                     src={ec1000Gif1}
                     width={1280}
                     height={720}
+                    objectFit='cover'
                     alt="add meta information for pictures"
                   />
-               
               </div>
-
+            </div>
+            <div className="row">
               <div className="col">
-               
+                  <Image 
+                    className="col-image"
+                    src={ec1000Gif2}
+                    width={1280}
+                    height={720}
+                    objectFit='cover'
+                    alt="add meta information for pictures"
+                  />
+              </div>
+              <div className="col">
                 <Image 
                     className="col-image"
                     src={ec1000Gif3}
                     width={1280}
                     height={720}
+                    objectFit='cover'
                     alt="add meta information for pictures"
                   />
-                
               </div>
             </div>
             <div className="row">
@@ -353,14 +458,102 @@ The knives realign to maintain equal protrusion of the core. The knives find the
                   <iframe 
                     width="100%" 
                     height="100%" 
-                    src="https://www.youtube.com/embed/kqv2QqCMrWg" 
-                    title="YouTube video player" 
+                    src={activeModel === model_1.id ? model_1.src: ""}
+                    //src={model_1.src}
+                    title="EC-1100-200 In Action" 
                     frameBorder="0" 
                    
                     allowFullScreen>
                     
                   </iframe>
+                </div>
+              </div>
+            </div>
+            </div>
+            </Right>
+        </Content>
 
+
+
+               {/* EC-300AL */}
+
+               <Content classes="model-2 popup-item">
+            <Left>
+            <h2>{model_2.name}</h2>
+            <div className="model-detail-container">
+              <TextContent
+                param={model_2.param}
+                // name={model_0.name}
+                options={model_2.options}
+              />
+            </div>
+
+            <p>
+            This machine has loading and unloading conveyors with up to 10 roll capacity. 
+
+            </p>
+            
+            </Left>
+            <Right>
+            <div className="col full">
+            <div className="row">
+              <div className="col">
+                  <Image 
+                    className="col-image"
+                    src={ec300}
+                    width={1280}
+                    height={720}
+                    objectFit='cover'
+                    alt="add meta information for pictures"
+                  />
+              </div>
+              <div className="col">
+                <Image 
+                    className="col-image"
+                    src={ec300Gif1}
+                    width={1280}
+                    height={720}
+                    objectFit='cover'
+                    alt="add meta information for pictures"
+                  />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                  <Image 
+                    className="col-image"
+                    src={ec300Gif2}
+                    width={1280}
+                    height={720}
+                    objectFit='cover'
+                    alt="add meta information for pictures"
+                  />
+              </div>
+              <div className="col">
+                <Image 
+                    className="col-image"
+                    src={ec300Gif3}
+                    width={1280}
+                    height={720}
+                    objectFit='cover'
+                    alt="add meta information for pictures"
+                  />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col full">
+                <div className="video-wrapper">
+                  <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src={activeModel === model_2.id ? model_2.src: ""}
+                    //src={model_1.src}
+                    title="EC-1100-200 In Action" 
+                    frameBorder="0" 
+                   
+                    allowFullScreen>
+                    
+                  </iframe>
                 </div>
               </div>
             </div>

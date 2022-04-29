@@ -8,6 +8,7 @@ export default function TextContent({ options, param, name }) {
         <div className="text-content">
           <div className="left-desc">
             {name ? <h3>{name}</h3> : ""}
+             <span className="more-notification">More Info</span>
             <div className="option-list list-item extend">
               <p className="list-head">Options</p>
               {
@@ -15,7 +16,10 @@ export default function TextContent({ options, param, name }) {
                  return <p key={i} className="sub-item">{item}</p>
                 })
               }
+              
             </div>
+           
+        
           </div>
           <div className="right-desc">
             {param.map((item, i) => {
