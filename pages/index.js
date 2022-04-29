@@ -10,8 +10,8 @@ import Right from '../components/layout/Right.js'
 import ModelMenu from '../components/ModelMenu.js'
 import TextContent from '../components/TextContent.js'
 
-import tempPic from '../public/ec-200-1100/gif1.gif'
-import tempGif from '../public/images/giftest.gif'
+
+
 import { useEffect } from 'react/cjs/react.production.min';
 
 //EC-1100
@@ -35,6 +35,13 @@ import ec300Gif3 from '../public/ec300/gif3.gif'
 import ec300 from  '../public/ec300/ec.jpg'
 
 
+//industry
+
+import industryP1 from '../public/industry/p1.jpg';
+import industryP2 from '../public/industry/p2.jpg';
+
+import roundKnives from '../public/images/roundKnives.jpg'
+import logo from '../public/images/logo.png'
 
 import useIntersection from '../components/hooks/useIntersection.js'
 
@@ -164,11 +171,24 @@ export default function Home() {
 
 
 
+  
+  const home = useRef();
+  const nav0View = useIntersection(home, '-100px');
+
   const standardModel = useRef();
-  const inViewport = useIntersection(standardModel, '-200px');
+  const nav1View = useIntersection(standardModel, '-100px');
+
+  const industry = useRef();
+  const nav2View = useIntersection(industry, '-100px');
+
+  const support = useRef();
+  const nav3View = useIntersection(support, '-100px');
+  
+  const contact = useRef();
+  const nav4View = useIntersection(contact, '-100px');
   //const standVisible = useOnScreen(standardModel)
  
-  console.log(inViewport)
+  
   // useEffect(() => {
   //   console.log("Is visible? ", inViewport)
   // }, [inViewport])
@@ -194,7 +214,7 @@ export default function Home() {
 
 
       {/* LANDING PAGE */}
-      <Content>
+      <Content navView={nav0View} refs={home}>
         
         <Left>
         <div className="text-box no-space">
@@ -205,10 +225,9 @@ export default function Home() {
         <div className="text-box">
           <ul>
             <li onClick={()=> standardModel.current.scrollIntoView({ behavior: 'smooth' })} >Standard Models</li>
-            <li onClick={()=> standardModel.current.scrollIntoView({ behavior: 'smooth' })} >Customize</li>
-            <li onClick={()=> standardModel.current.scrollIntoView({ behavior: 'smooth' })} >Industries</li>
-            <li onClick={()=> standardModel.current.scrollIntoView({ behavior: 'smooth' })} >Support</li>
-            <li onClick={()=> standardModel.current.scrollIntoView({ behavior: 'smooth' })} >About Us & Contact</li>
+            <li onClick={()=> industry.current.scrollIntoView({ behavior: 'smooth' })} >The Industry</li>
+            <li onClick={()=> support.current.scrollIntoView({ behavior: 'smooth' })} >Support</li>
+            <li onClick={()=> contact.current.scrollIntoView({ behavior: 'smooth' })} >About Us & Contact</li>
           </ul>
         </div>
         </Left>
@@ -270,7 +289,7 @@ The knives realign to maintain equal protrusion of the core. The knives find the
 
 
       {/* STANDARD MODELS AREA */}
-      <Content refs={standardModel} >
+      <Content refs={standardModel} navView={nav1View} >
         <Left>
             <div  className="text-box">
               <h2>Standard Models </h2>
@@ -504,7 +523,7 @@ These edge cutters are also suitable for side trimming of PVC shrink film and PE
                     width={1280}
                     height={720}
                     objectFit='cover'
-                    alt="add meta information for pictures"
+                    alt="EC300 edge cutter"
                   />
               </div>
               <div className="col">
@@ -514,7 +533,7 @@ These edge cutters are also suitable for side trimming of PVC shrink film and PE
                     width={1280}
                     height={720}
                     objectFit='cover'
-                    alt="add meta information for pictures"
+                    alt="EC300AL edge cutter convyer belt"
                   />
               </div>
             </div>
@@ -526,7 +545,7 @@ These edge cutters are also suitable for side trimming of PVC shrink film and PE
                     width={1280}
                     height={720}
                     objectFit='cover'
-                    alt="add meta information for pictures"
+                    alt="EC300AL shrink wrap edge cutter in action"
                   />
               </div>
               <div className="col">
@@ -536,7 +555,7 @@ These edge cutters are also suitable for side trimming of PVC shrink film and PE
                     width={1280}
                     height={720}
                     objectFit='cover'
-                    alt="add meta information for pictures"
+                    alt="The trimmed rolls come out"
                   />
               </div>
             </div>
@@ -564,53 +583,92 @@ These edge cutters are also suitable for side trimming of PVC shrink film and PE
        
       </Popup>
 
-      <Content>
+      <Content refs={industry} navView={nav2View} >
         <Left>
           <div className="text-box">
-            <h2>Industries</h2>
-            <p>[What industries are the edge cutters used for?]</p>
-            <p>[What kind of end products are there?]</p>
-            <p>[What materials do the edge cutters process?]</p>
+            <h2>The PVC And Polyethylene Industry</h2>
             <p>
-
-            The edge cutter machines are used in many industries...
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec ultricies dui, sed vehicula libero. Nunc ut sem ut est fringilla consectetur vel in purus. Vivamus eleifend risus eu egestas laoreet. Sed vitae lectus eget lectus egestas gravida ac vitae enim. Etiam tincidunt auctor justo ac faucibus. Praesent at tempor arcu. Proin quis elementum est. Vestibulum laoreet suscipit rutrum. Aenean a mauris quis libero convallis euismod. Aliquam eu sapien vitae purus malesuada sodales. Ut ut ex risus. Maecenas in lorem et arcu egestas ullamcorper. Nulla fermentum at ante at commodo. Morbi condimentum neque turpis, a lobortis nibh pharetra quis. Sed sed consequat lacus.
+            Polyethylene or PVC roll edge trimming is a necessary step in the creation of shrink wrap products. Once the shrink film is created, the edges must be cut from the roll in order to be able to unwind the material. A required stage in making PVC or polyethylene rolls viable as a product. 
             </p>
           </div>
         </Left>
 
         <Right>
+        {/* <div className="row"> */}
+              <div className="col">
+                  <Image 
+                    className="col-image"
+                    src={industryP1}
+                    width={1280}
+                    height={720}
+                    objectFit='cover'
+                    alt="PVC roll edge intact"
+                  />
+              </div>
+              <div className="col">
+                <Image 
+                    className="col-image"
+                    src={industryP2}
+                    width={1280}
+                    height={720}
+                    objectFit='cover'
+                    alt="PVC roll edge cut"
+                  />
+              </div>
+            {/* </div> */}
 
         </Right>
       </Content>
 
-      <Content>
+      <Content navView={nav3View} refs={support}>
         <Left>
           <div className="text-box">
-            <h2>Edge Cutter Support</h2>
+            <h2>Stretch Film Roll Edge Cutter Support</h2>
             <p>
-            [How will agm support the client??, besides selling the edge cutter blade]
-            
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec ultricies dui, sed vehicula libero. Nunc ut sem ut est fringilla consectetur vel in purus. Vivamus eleifend risus eu egestas laoreet. Sed vitae lectus eget lectus egestas gravida ac vitae enim. Etiam tincidunt auctor justo ac faucibus. Praesent at tempor arcu. Proin quis elementum est. Vestibulum laoreet suscipit rutrum. Aenean a mauris quis libero convallis euismod. Aliquam eu sapien vitae purus malesuada sodales. Ut ut ex risus. Maecenas in lorem et arcu egestas ullamcorper. Nulla fermentum at ante at commodo. Morbi condimentum neque turpis, a lobortis nibh pharetra quis. Sed sed consequat lacus.
+            Previously manufactured under Tronoplast brand, the edge cutter technology was transferred to AGM Automation.
+The Tronoplast's machines were significantly improved under the new brand. AGM's machines have been sold to many locations since Tronoplast closed its doors.
+We also upgrade and solve all issues with Tronoplast products including programming and spare parts supply. We repair, upgrade, and deliver spare parts for both Tronoplast and AGM machines currently in service.  
+ Please be assured of our permanent support for your current and future needs. 
+
            
             </p>
           </div>
         </Left>
 
         <Right>
+         
+          <div className="row">
+            <div className="col">
+              <ul className="reg">
+                <li>Online troubleshooting</li>
+                <li>Service visits</li>
+                <li>Consumable Parts</li>
+                <li>Process advice</li>
+                <li>Emergency Contact</li>
+              </ul>
+            </div>
+            <div className="col">
+            <Image 
+                    className="col-image"
+                    src={roundKnives}
+                    width={1280}
+                    height={720}
+                    objectFit='cover'
+                    alt="PVC roll edge cut"
+                  />
+            </div>
+          </div>
           
         </Right>
       </Content>
 
 
-      <Content>
+      <Content navView={nav4View} refs={contact}>
         <Left>
           <div className="text-box">
             <h2>About AGM</h2>
             <p>
-            AGM Automation Systems Inc. is an OEM and Systems Integration company with an extensive experience and unique know-how in industrial automation and turnkey engineered solutions for the industry.
-
-We have over 20 years of experience... 
+            AGM Automation Systems Inc. is an OEM and Systems Integration company with extensive experience and unique know-how in industrial automation and turnkey engineered solutions for the industry. We have over 20 years of experience, ensuring that our products are excellent in quality and supported.  
             </p>
           </div>
           <h4>Email Us
@@ -621,15 +679,26 @@ We have over 20 years of experience...
               <br/>
               <span className="subtext">416-628-5682</span>
           </h4>
-          <h4>Our Location 
+          <h4>Our Website
               <br/>
-              <span className="subtext">info@agmautomation.com</span>
+              <span className="subtext">http://agmautomation.com/</span>
           </h4>
           
         </Left>
 
         <Right>
-          
+          <div className="col">
+          <Image 
+                    className="col-image"
+                    src={logo}
+                    width={1280}
+                    height={720}
+                    
+                    //objectFit='cover'
+                    layout="intrinsic"
+                    alt="AGM logo"
+                  />
+          </div>
         </Right>
       </Content>
 

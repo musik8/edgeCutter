@@ -126,8 +126,26 @@ p {
 .view-container {
   display: flex;
   padding-top: $Dmw;
-  padding-bottom: $Dmw;
+  padding-bottom: $Dmw * 2;
   width: 100%;
+
+  .left-side, .right-side {
+    opacity: 0;
+    transform: translateY(50px)
+  }
+  .left-side {
+    transition: opacity 500ms ease-in-out 100ms, transform 600ms ease-in-out;
+  }
+  .right-side {
+    transition: opacity 500ms ease-in-out 350ms, transform 600ms ease-in-out 250ms;
+  }
+
+  &.active-view {
+    .left-side, .right-side {
+      opacity: 1;
+      transform: translateY(0px)
+    }
+  }
   
 }
 .left-side {
@@ -157,11 +175,23 @@ ul {
     text-decoration: underline;
     transition: color 500ms ease-in-out, transform 500ms ease-in-out;
     transform-origin: center;
+
+    
     &:hover {
       cursor: pointer;
       color: $blue;
       transform: translateX(10px);
     } 
+  }
+}
+.reg{
+  li {
+  text-decoration: none;
+  &:hover {
+    cursor: auto;
+    color: #000;
+    transform: translateX(0px);
+  } 
   }
 }
 
@@ -405,7 +435,7 @@ iframe {
     padding-bottom: $Dmw;
   }
   p {
-    font-size: 10px;
+    font-size: 11px;
   }
   .subtext {
     font-size: 22px;
@@ -521,6 +551,7 @@ iframe {
   flex-direction: column;
   padding-bottom: $Mmw;
    .col {
+    padding-bottom: $Mmw;
     // display: flex;
     // flex-direction: column;
      
