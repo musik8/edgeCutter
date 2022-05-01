@@ -1,5 +1,5 @@
 
-export default function TextContent({ options, param, name }) {
+export default function TextContent({ options, param, name, desc }) {
   
   
   
@@ -8,6 +8,8 @@ export default function TextContent({ options, param, name }) {
         <div className="text-content">
           <div className="left-desc">
             {name ? <h3>{name}</h3> : ""}
+            {desc ? <h4>{desc}</h4> : ""}
+            
              <span className="more-notification">More Info</span>
             <div className="option-list list-item extend">
               <p className="list-head">Options</p>

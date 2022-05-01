@@ -53,7 +53,8 @@ export default function Home() {
 
   const model_0 = {
     id: 0,
-    name: "EC-400 & EC-400W #1",
+    name: "EC-400 & EC-400W",
+    desc: "AUTOMATIC EDGE CUTTER FOR REGULAR AND EXTRA BIG ROLLS",
     picture: ec400,
     src: "https://www.youtube.com/embed/Bemm_F5OinA" ,
     options: [
@@ -87,7 +88,8 @@ export default function Home() {
   }
   const model_1 = {
     id: 1,
-    name: "EC-200-1100 #2",
+    name: "EC-200-1100",
+    desc: "AUTOMATIC EDGE CUTTER FOR REGULAR AND EXTRA WIDE ROLLS",
     picture: ec1100main,
     src: "https://www.youtube.com/embed/OJzS40vWNsc" ,
     options: [
@@ -121,7 +123,8 @@ export default function Home() {
 
   const model_2 = {
     id: 2,
-    name: "EC-300AL #3",
+    name: "EC-300AL",
+    desc: "AUTOMATIC ROLL LOADING EDGE CUTTER",
     src: "https://www.youtube.com/embed/kqv2QqCMrWg" ,
     picture: ec300,
     options: [
@@ -318,16 +321,17 @@ These edge cutters are also suitable for side trimming of PVC shrink film and PE
         <Content classes="model-0 popup-item">
             <Left>
             <h2>{model_0.name}</h2>
+            <h3>{model_0.desc}</h3>
             <div className="model-detail-container">
               <TextContent
                 param={model_0.param}
                 // name={model_0.name}
+
+               // desc={model_0.desc}
                 options={model_0.options}
               />
             </div>
-            <p>
-              AUTOMATIC EDGE CUTTER FOR REGULAR AND EXTRA BIG ROLLS
-            </p>
+           
             <p>
             This machine can handle rolls of 280-550 mm wide and 120 mm to 400 mm outer diameter (OD) [up to 610 mm OD for EC-400W]. This machine can trim any problematic rolls with telescoping edges and core uneven protrusion. It can make multiple cuts until the roll edge gets perfect. The cycle time varies significantly depending on the roll OD and roll quality. Minimum cycle time is 30-35 sec. The model EC-400 has also the core cutting option as a part of the trimming cycle.
 
@@ -412,14 +416,16 @@ These edge cutters are also suitable for side trimming of PVC shrink film and PE
         <Content classes="model-1 popup-item">
             <Left>
             <h2>{model_1.name}</h2>
+            <h3>{model_1.desc}</h3>
             <div className="model-detail-container">
               <TextContent
                 param={model_1.param}
                 // name={model_0.name}
+                //desc={model_1.desc}
                 options={model_1.options}
               />
             </div>
-            <p>AUTOMATIC EDGE CUTTER FOR REGULAR AND EXTRA WIDE ROLLS</p>
+          
 
             <p>
             This machine is designed for trimming extra-wide rolls from 280 mm to 1030 mm and 120 – 200 mm OD. 
@@ -501,14 +507,16 @@ These edge cutters are also suitable for side trimming of PVC shrink film and PE
                <Content classes="model-2 popup-item">
             <Left>
             <h2>{model_2.name}</h2>
+            <h3>{model_2.desc}</h3>
             <div className="model-detail-container">
               <TextContent
                 param={model_2.param}
                 // name={model_0.name}
                 options={model_2.options}
+                //desc={model_2.desc}
               />
             </div>
-            <p>AUTOMATIC ROLL LOADING EDGE CUTTER</p>
+           
             <p>
             This machine has loading and unloading conveyors with up to 10 roll capacity. 
 

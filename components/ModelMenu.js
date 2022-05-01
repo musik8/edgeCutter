@@ -28,6 +28,7 @@ export default function ModelMenu({ children, data, setModel }) {
       <TextContent
         param={item.param}
         name={item.name}
+        desc={item.desc}
         options={item.options}
       />
 
