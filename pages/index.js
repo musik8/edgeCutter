@@ -41,6 +41,7 @@ import industryP1 from '../public/industry/p1.jpg';
 import industryP2 from '../public/industry/p2.jpg';
 
 import roundKnives from '../public/images/roundKnives.jpg'
+import support2 from '../public/images/support2.jpg'
 import logo from '../public/images/logo.png'
 
 import useIntersection from '../components/hooks/useIntersection.js'
@@ -657,7 +658,8 @@ The machines were significantly improved under the new brand.
                 <li>Process advice (online/phone)</li>
               </ul>
             </div>
-            <div className="col">
+            <div className="col"> 
+              <div className="row">
             <Image 
                     className="col-image"
                     src={roundKnives}
@@ -666,7 +668,20 @@ The machines were significantly improved under the new brand.
                     objectFit='cover'
                     alt="PVC roll edge cut"
                   />
+</div>
+<div className="row">
+<Image 
+                    className="col-image"
+                    src={support2}
+                    width={1280}
+                    height={720}
+                    objectFit='cover'
+                    alt="Support items for machines"
+                  />
+                  </div>
             </div>
+
+            
           </div>
           
         </Right>
