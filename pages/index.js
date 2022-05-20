@@ -42,6 +42,7 @@ import industryP2 from '../public/industry/p2.jpg';
 
 import roundKnives from '../public/images/roundKnives.jpg'
 import support2 from '../public/images/support2.jpg'
+import support3 from '../public/images/support3.jpg'
 import logo from '../public/images/logo.png'
 
 import useIntersection from '../components/hooks/useIntersection.js'
@@ -649,8 +650,10 @@ The machines were significantly improved under the new brand.
 
         <Right>
          
+        <div className="col full">
           <div className="row">
             <div className="col">
+             
               <ul className="reg">
                 <li>Online troubleshooting</li>
                 <li>Service visits</li>
@@ -658,19 +661,26 @@ The machines were significantly improved under the new brand.
                 <li>Process advice (online/phone)</li>
               </ul>
             </div>
-            <div className="col"> 
-              <div className="row">
-            <Image 
-                    className="col-image"
-                    src={roundKnives}
-                    width={1280}
-                    height={720}
-                    objectFit='cover'
-                    alt="PVC roll edge cut"
-                  />
-</div>
-<div className="row">
-<Image 
+
+            <div className="col">    
+              <Image 
+                      className="col-image"
+                      src={roundKnives}
+                      width={1280}
+                      height={720}
+                      objectFit='cover'
+                      alt="PVC roll edge cut"
+                    />
+      
+            </div>
+    
+        
+            </div>
+
+        
+            <div className="row">
+              <div className="col">
+              <Image 
                     className="col-image"
                     src={support2}
                     width={1280}
@@ -678,18 +688,27 @@ The machines were significantly improved under the new brand.
                     objectFit='cover'
                     alt="Support items for machines"
                   />
-                  </div>
-            </div>
+              </div>
+              <div className="col">
+              <Image 
+                    className="col-image"
+                    src={support3}
+                    width={1280}
+                    height={720}
+                    objectFit='cover'
+                    alt="Support items for machines"
+                  />
+              </div>
+              </div>
 
-            
-          </div>
-          
+            </div>
         </Right>
       </Content>
 
 
       <Content navView={nav4View} refs={contact}>
         <Left>
+     
           <div className="text-box">
             <h2>About AGM</h2>
             <p>
